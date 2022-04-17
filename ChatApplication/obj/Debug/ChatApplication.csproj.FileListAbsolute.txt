@@ -1,0 +1,11 @@
+E:\csharp\ChatApplication\ChatApplication\bin\Debug\ChatApplication.exe.config
+E:\csharp\ChatApplication\ChatApplication\bin\Debug\ChatApplication.exe
+E:\csharp\ChatApplication\ChatApplication\bin\Debug\ChatApplication.pdb
+E:\csharp\ChatApplication\ChatApplication\obj\Debug\ChatApplication.csproj.AssemblyReference.cache
+E:\csharp\ChatApplication\ChatApplication\obj\Debug\ChatApplication.csproj.SuggestedBindingRedirects.cache
+E:\csharp\ChatApplication\ChatApplication\obj\Debug\ChatApplication.Form1.resources
+E:\csharp\ChatApplication\ChatApplication\obj\Debug\ChatApplication.Properties.Resources.resources
+E:\csharp\ChatApplication\ChatApplication\obj\Debug\ChatApplication.csproj.GenerateResource.cache
+E:\csharp\ChatApplication\ChatApplication\obj\Debug\ChatApplication.csproj.CoreCompileInputs.cache
+E:\csharp\ChatApplication\ChatApplication\obj\Debug\ChatApplication.exe
+E:\csharp\ChatApplication\ChatApplication\obj\Debug\ChatApplication.pdb
