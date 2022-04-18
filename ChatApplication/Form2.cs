@@ -96,7 +96,7 @@ namespace ChatApplication
            
             string myApiKey = "";
            
-            string masking = "Izaan Jahangir";
+            string masking = loggedInUser.username;
          
             string jsonResponse = SendSMS(masking, to, message, myApiKey);
             Console.Write(jsonResponse);
