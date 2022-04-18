@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace ChatApplication
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void logout_btn_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
-            f2.Show();
+            Form1 form1 = new Form1();
+            form1.Show();
             this.Hide();
         }
     }
