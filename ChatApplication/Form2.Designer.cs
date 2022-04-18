@@ -35,6 +35,7 @@
             this.message_label = new System.Windows.Forms.Label();
             this.send_button = new System.Windows.Forms.Button();
             this.logout_btn = new System.Windows.Forms.Button();
+            this.hi_user_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 92);
+            this.label2.Location = new System.Drawing.Point(36, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 13);
             this.label2.TabIndex = 1;
@@ -58,23 +59,23 @@
             // 
             // to_textbox
             // 
-            this.to_textbox.Location = new System.Drawing.Point(39, 108);
+            this.to_textbox.Location = new System.Drawing.Point(39, 163);
             this.to_textbox.Name = "to_textbox";
             this.to_textbox.Size = new System.Drawing.Size(238, 20);
             this.to_textbox.TabIndex = 2;
             // 
             // message_textbox
             // 
-            this.message_textbox.Location = new System.Drawing.Point(39, 167);
+            this.message_textbox.Location = new System.Drawing.Point(39, 222);
             this.message_textbox.Multiline = true;
             this.message_textbox.Name = "message_textbox";
-            this.message_textbox.Size = new System.Drawing.Size(238, 219);
+            this.message_textbox.Size = new System.Drawing.Size(238, 164);
             this.message_textbox.TabIndex = 3;
             // 
             // message_label
             // 
             this.message_label.AutoSize = true;
-            this.message_label.Location = new System.Drawing.Point(36, 151);
+            this.message_label.Location = new System.Drawing.Point(36, 206);
             this.message_label.Name = "message_label";
             this.message_label.Size = new System.Drawing.Size(53, 13);
             this.message_label.TabIndex = 4;
@@ -100,11 +101,22 @@
             this.logout_btn.UseVisualStyleBackColor = true;
             this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
             // 
+            // hi_user_label
+            // 
+            this.hi_user_label.AutoSize = true;
+            this.hi_user_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hi_user_label.Location = new System.Drawing.Point(53, 71);
+            this.hi_user_label.Name = "hi_user_label";
+            this.hi_user_label.Size = new System.Drawing.Size(72, 24);
+            this.hi_user_label.TabIndex = 7;
+            this.hi_user_label.Text = "Hi User";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 513);
+            this.Controls.Add(this.hi_user_label);
             this.Controls.Add(this.logout_btn);
             this.Controls.Add(this.send_button);
             this.Controls.Add(this.message_label);
@@ -117,6 +129,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,5 +144,6 @@
         private System.Windows.Forms.Label message_label;
         private System.Windows.Forms.Button send_button;
         private System.Windows.Forms.Button logout_btn;
+        private System.Windows.Forms.Label hi_user_label;
     }
 }

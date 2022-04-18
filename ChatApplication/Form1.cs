@@ -58,6 +58,7 @@ namespace ChatApplication
 
 
             Form2 f2 = new Form2();
+            f2.loggedInUser = foundUser;
             f2.Show();
             this.Hide();
         }

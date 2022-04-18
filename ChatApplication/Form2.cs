@@ -6,16 +6,35 @@ namespace ChatApplication
 {
     public partial class Form2 : Form
     {
+        public User loggedInUser;
         public Form2()
         {
             InitializeComponent();
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            if(loggedInUser == null)
+            {
+                showMessage("Please login first");
+                openLoginForm();
+                this.Hide();
+
+                return;
+            }
+
+            this.hi_user_label.Text = "Hi " + loggedInUser.username;
+        }
+
         private void logout_btn_Click(object sender, EventArgs e)
         {
+            openLoginForm();
+            this.Hide();
+        }
+
+        private void openLoginForm() {
             Form1 form1 = new Form1();
             form1.Show();
-            this.Hide();
         }
 
         public static string SendSMS(string Masking, string toNumber, string MessageText, string MyApiKey)
