@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net;
 using System.Windows.Forms;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
 
 namespace ChatApplication
 {
@@ -39,41 +41,27 @@ namespace ChatApplication
 
         public static string SendSMS(string Masking, string toNumber, string MessageText, string MyApiKey)
         {
-            String URI = "https://sendpk.com" +
-            "/api/sms.php?" +
-            "api_key=" + MyApiKey +
-            "&sender=" + Masking +
-            "&mobile=" + toNumber +
-            "&message=" + Uri.UnescapeDataString(MessageText); // Visual Studio 10-15
-       
             try
             {
-                WebRequest req = WebRequest.Create(URI);
-                WebResponse resp = req.GetResponse();
-                var sr = new System.IO.StreamReader(resp.GetResponseStream());
-                return sr.ReadToEnd().Trim();
+                string accountSid = "";
+                string authToken = "";
+
+                TwilioClient.Init(accountSid, authToken);
+
+                var message = MessageResource.Create(
+                    body: MessageText,
+                    from: new Twilio.Types.PhoneNumber("+19705288346"),
+                    to: new Twilio.Types.PhoneNumber(toNumber)
+                );
+
+                Console.WriteLine(message.Sid);
+                showMessage("Message sent successfully");
             }
-            catch (WebException ex)
+            catch(Exception e)
             {
-                var httpWebResponse = ex.Response as HttpWebResponse;
-                if (httpWebResponse != null)
-                {
-                    switch (httpWebResponse.StatusCode)
-                    {
-                        case HttpStatusCode.NotFound:
-                            showMessage("404:URL not found :" + URI);
-                            break;
-                           
-                        case HttpStatusCode.BadRequest:
-                            showMessage("400:Bad Request");
-                            break;
-                       
-                        default:
-                            showMessage( httpWebResponse.StatusCode.ToString());
-                            break;
-                    }
-                }
+                showMessage(e.Message);
             }
+            
             return null;
         }
 
@@ -98,9 +86,8 @@ namespace ChatApplication
            
             string masking = loggedInUser.username;
          
-            string jsonResponse = SendSMS(masking, to, message, myApiKey);
-            Console.Write(jsonResponse);
-            showMessage("Message sent successfully");
+            SendSMS(masking, to, message, myApiKey);
+      
             
         }
 
